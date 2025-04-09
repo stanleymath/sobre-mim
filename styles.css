@@ -1,0 +1,313 @@
+/* Cores & Tipografia */
+:root {
+    --roxo: #8A63F2;
+    --rosa: #FF4A6E;
+    --fundo: #0F0E17;
+    --card: #161622;
+    --texto: #E7E7E7;
+    --borda: rgba(138, 99, 242, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Menu Moderno */
+nav {
+    background: rgba(17, 16, 26, 0.98);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 20px 0;
+    backdrop-filter: blur(100%);
+}
+
+.menu-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--texto);
+}
+
+.menu-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.menu-links a {
+    color: var(--texto);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+    padding: 5px 0;
+}
+
+.menu-links a:hover {
+    color: var(--roxo);
+}
+
+.menu-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--roxo);
+    transition: width 0.3s;
+}
+
+.menu-links a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    color: var(--texto);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* Header  */
+header {
+    background: var(--fundo);
+    padding: 180px 0 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 75% 50%, 
+                              rgba(138, 99, 242, 0.15) 0%, 
+                              transparent 50%);
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #9504b9, #07ad76);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    line-height: 1.2;
+}
+
+header p {
+    font-size: 2.4rem;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    color: var(--texto);
+    opacity: 0.9;
+}
+
+.dif {
+    font-size: 1.4rem;
+    max-width: 700px;
+    margin: 0 auto 0px;
+    color: var(--texto);
+    opacity: 0.9;
+}
+
+
+/* Seções */
+section {
+    padding: 50px 0;
+}
+
+h2 {
+    text-align: center;
+    color: var(--branco);
+    margin-bottom: 60px;
+    font-size: 2rem;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background: var(--roxo);
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Sobre Mim */
+.sobre {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background-color: var(--card);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid var(--borda);
+}
+
+.sobre img {
+    width: 300px;
+    border-radius: 12px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.sobre p {
+    margin-bottom: 20px;
+    color: var(--texto);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--card);
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid var(--borda);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(138, 99, 242, 0.2);
+}
+
+.card i {
+    color: var(--roxo);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: var(--branco);
+}
+
+.card p {
+    color: var(--texto);
+    line-height: 1.7;
+    text-align: justify;
+    text-justify: inter-character;
+    hyphens: auto;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--card);
+    text-align: center;
+    padding: 50px 0;
+    margin-top: 60px;
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.redes-sociais a {
+    color: var(--texto);
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.redes-sociais a:hover {
+    color: var(--roxo);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .sobre {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .sobre img {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 30px;
+    }
+    
+    .menu-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--card);
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;
+        gap: 20px;
+        transform: translateY(-150%);
+        transition: transform 0.3s;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .menu-links.active {
+        transform: translateY(0);
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    header p {
+        font-size: 1.1rem;
+    }
+    
+    .header-badge {
+        font-size: 0.9rem;
+        padding: 8px 20px;
+    }
+}
+
